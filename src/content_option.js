@@ -133,8 +133,8 @@ const dataportfolio = [{
 ];
 
 const contactConfig = {
-    YOUR_EMAIL: "name@domain.com",
-    YOUR_FONE: "(555)123-4567",
+    YOUR_EMAIL: "memoria.parantar@gmail.com",
+    YOUR_FONE: "+32492871793",
     description: "",
     // creat an emailjs.com account 
     // check out this tutorial https://www.emailjs.com/docs/examples/reactjs/
