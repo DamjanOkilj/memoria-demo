@@ -1,0 +1,288 @@
+/* Pricing page styles - follow global theme variables from src/index.css
+   Uses --text-color, --text-color-2, --bg-color, --primary-color, --secondary-color
+   so the page follows the project's theme toggle (Themetoggle sets data-theme on <html>).
+*/
+
+/* Base layout */
+.main {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  color: var(--text-color);
+  background: var(--bg-color);
+}
+
+
+
+
+
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: var(--text-color);
+}
+
+body[data-theme="light"].title,
+html[data-theme="light"].title,
+body.light .title,
+html.light .title {
+  color: #000000;
+}
+
+.infoSection { margin-bottom: 2.5rem; }
+.infoBlock { margin-bottom: 1.6rem; }
+
+.infoBlock h2 {
+  margin-bottom: 0.6rem;
+  color: var(--text-color);
+  font-size: 1.25rem;
+}
+
+.infoBlock p {
+  line-height: 1.6;
+  color: var(--text-color-2);
+}
+
+body[data-theme="light"].infoBlock h2,
+html[data-theme="light"].infoBlock h2,
+body.light .infoBlock h2,
+html.light .infoBlock h2 {
+  color: #000000;
+}
+
+
+body[data-theme="light"].infoBlock p,
+html[data-theme="light"].infoBlock p,
+body.light .infoBlock p,
+html.light .infoBlock p {
+  color: #000000;
+}
+
+/* Pricing cards */
+.pricingSection { margin-bottom: 2.5rem; }
+
+.priceCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.priceCard {
+  padding: 1.25rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.2s ease;
+  color: var(--text-color);
+  /* sensible defaults; overridden below per theme */
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Light theme cards (when Themetoggle sets data-theme="light") */
+body[data-theme="light"] .priceCard,
+html[data-theme="light"] .priceCard,
+body.light .priceCard,
+html.light .priceCard {
+  background: black;
+  border-color: rgba(0,0,0,0.08);
+}
+
+/* Dark theme cards */
+body[data-theme="dark"] .priceCard,
+html[data-theme="dark"] .priceCard,
+body.dark .priceCard,
+html.dark .priceCard {
+  background: rgba(255,255,255,0.03);
+  border-color: rgba(255,255,255,0.06);
+}
+
+.priceCard:hover { transform: translateY(-6px); }
+
+.priceCard h3 {
+  margin-bottom: 0.6rem;
+  color: var(--text-color);
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 0.25rem;
+}
+
+.duration,
+.contactPrice { color: var(--text-color-2); }
+
+/* CTA */
+.cta { text-align: center; margin-top: 1.5rem; }
+
+.ctaButton {
+  display: inline-block;
+  padding: 0.85rem 1.6rem;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.ctaButton:hover {
+  opacity: 0.92;
+  transform: translateY(-2px);
+}
+
+/* Small screens */
+@media (max-width: 640px) {
+  .main { padding: 1rem; }
+  .title { font-size: 1.6rem; }
+  .priceCards { grid-template-columns: 1fr; }
+}
+/* Light mode defaults */
+:root {
+  --text: #000000;        /* stronger, pure black for light mode text to improve contrast */
+  --muted: #333333;      /* slightly darker muted text */
+  --heading: #000000;    /* headings fully black */
+  --card-bg: #ffffff;
+  --card-border: rgba(0,0,0,0.08);
+  --cta-bg: #000000;
+  --cta-fg: #ffffff;
+  --page-bg: #ffffff;    /* explicit white page background for clarity */
+}
+
+/* Dark mode overrides - brighter, high-contrast colors via media query */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #f8f8f8;           /* bright main text in dark mode */
+    --muted: #d6d6d6;
+    --heading: #ffffff;
+    --card-bg: rgba(255,255,255,0.03);
+    --card-border: rgba(255,255,255,0.06);
+    --cta-bg: #ffffff;
+    --cta-fg: #0a0a0a;
+    --page-bg: transparent;
+  }
+}
+
+/* Also support class- and attribute-based dark-mode toggles used by some components */
+body[data-theme="dark"],
+:root.dark,
+.dark,
+html.dark {
+  --text: #f8f8f8;
+  --muted: #d6d6d6;
+  --heading: #ffffff;
+  --card-bg: rgba(255,255,255,0.03);
+  --card-border: rgba(255,255,255,0.06);
+  --cta-bg: #ffffff;
+  --cta-fg: #0a0a0a;
+  --page-bg: transparent;
+}
+
+/* Ensure body uses the variables (so global toggles take effect) */
+body {
+  color: var(--text);
+  background: var(--page-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Page layout */
+.main {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  color: var(--text);
+  background: var(--page-bg);
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: var(--heading);
+}
+
+.infoSection { margin-bottom: 2.5rem; }
+
+.infoBlock { margin-bottom: 1.6rem; }
+
+.infoBlock h2 {
+  margin-bottom: 0.6rem;
+  color: var(--heading);
+  font-size: 1.25rem;
+}
+
+.infoBlock p {
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* Pricing cards */
+.pricingSection { margin-bottom: 2.5rem; }
+
+.priceCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.priceCard {
+  background: var(--card-bg);
+  padding: 1.25rem;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+  text-align: center;
+  transition: transform 0.2s ease;
+  color: var(--text);
+}
+
+.priceCard:hover { transform: translateY(-6px); }
+
+.priceCard h3 {
+  margin-bottom: 0.6rem;
+  color: var(--heading);
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+}
+
+.duration,
+.contactPrice { color: var(--muted); }
+
+/* CTA */
+.cta { text-align: center; margin-top: 1.5rem; }
+
+.ctaButton {
+  display: inline-block;
+  padding: 0.85rem 1.6rem;
+  background-color: var(--cta-bg);
+  color: var(--cta-fg);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.ctaButton:hover {
+  opacity: 0.92;
+  transform: translateY(-2px);
+}
+
+body[data-theme="light"].ctaButton,
+html[data-theme="light"].ctaButton,
+body.light .ctaButton,
+html.light .ctaButton {
+  background-color: #000000;
+  color: #ffffff;
+}
+/* Small screens */
+@media (max-width: 640px) {
+  .main { padding: 1rem; }
+  .title { font-size: 1.6rem; }
+  .priceCards { grid-template-columns: 1fr; }
+}
