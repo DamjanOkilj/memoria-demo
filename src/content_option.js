@@ -144,7 +144,7 @@ const contactConfig = {
 };
 
 const socialprofils = {
-    instagram: "https://www.instagram.com",
+    instagram: "https://www.instagram.com/memoria.parantar/",
     github: "https://github.com",
     facebook: "https://www.facebook.com",
     linkedin: "https://linkedin.com",
