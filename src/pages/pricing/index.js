@@ -137,6 +137,16 @@ export const Pricing = () => {
           </div>
 
           <div className="priceCard">
+            <h3>Zwangerschap &amp; newborn</h3>
+            <p className="price">€340</p>
+          </div>
+
+          <div className="priceCard">
+            <h3>Communie of doopfeest</h3>
+            <p className="price">€300</p>
+          </div>
+
+          <div className="priceCard">
             <h3>Bruiloft</h3>
             <p className="price">vanaf €1000</p>
           </div>

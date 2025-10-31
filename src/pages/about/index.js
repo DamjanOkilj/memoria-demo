@@ -3,7 +3,7 @@ import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
 import { meta } from "../../content_option";
-import aboutPic from "../../images/aboutpic.jpg";
+import aboutPic from "../../images/profile.jpg";
 
 export const About = () => {
   return (
@@ -38,7 +38,7 @@ export const About = () => {
                 Wat ooit een hobby was, groeide uit tot een liefdevolle toewijding om de wereld door mijn lens te bekijken en te delen met anderen.
               </p>
               <p>
-                Elke fotoshoot is voor mij een nieuwe kans om iets unieks te creëren en voor jou een herinnering maken die je niet zal vergeten.
+                Elke fotoshoot is voor mij een nieuwe kans om iets uniek te creëren en voor jou een herinnering te maken die je niet zal vergeten.
               </p>
             </div>
           </Col>

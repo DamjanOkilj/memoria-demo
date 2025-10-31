@@ -7,6 +7,7 @@ import { Container, Row, Col, Alert } from "react-bootstrap";
 import { contactConfig } from "../../content_option";
 
 export const ContactUs = () => {
+  emailjs.init("xrTqdAgUjNac9pLdB");
   const [formData, setFormdata] = useState({
     email: "",
     name: "",
@@ -24,7 +25,7 @@ export const ContactUs = () => {
     const templateParams = {
       from_name: formData.email,
       user_name: formData.name,
-      to_name: contactConfig.YOUR_EMAIL,
+      to_name: "memoria.parantar@gmail.com",
       message: formData.message,
     };
 
@@ -33,7 +34,7 @@ export const ContactUs = () => {
         contactConfig.YOUR_SERVICE_ID,
         contactConfig.YOUR_TEMPLATE_ID,
         templateParams,
-        contactConfig.YOUR_USER_ID
+        "xrTqdAgUjNac9pLdB"
       )
       .then(
         (result) => {
