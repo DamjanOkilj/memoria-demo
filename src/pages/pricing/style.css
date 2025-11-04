@@ -28,7 +28,7 @@ body[data-theme="light"].title,
 html[data-theme="light"].title,
 body.light .title,
 html.light .title {
-  color: #000000;
+  color: rgb(black, black, black);
 }
 
 .infoSection { margin-bottom: 2.5rem; }
@@ -49,7 +49,7 @@ body[data-theme="light"].infoBlock h2,
 html[data-theme="light"].infoBlock h2,
 body.light .infoBlock h2,
 html.light .infoBlock h2 {
-  color: #000000;
+  color: rgb(black, black, black);
 }
 
 
@@ -57,7 +57,7 @@ body[data-theme="light"].infoBlock p,
 html[data-theme="light"].infoBlock p,
 body.light .infoBlock p,
 html.light .infoBlock p {
-  color: #000000;
+  color: rgb(black, black, black);
 }
 
 /* Pricing cards */
@@ -277,8 +277,8 @@ body[data-theme="light"].ctaButton,
 html[data-theme="light"].ctaButton,
 body.light .ctaButton,
 html.light .ctaButton {
-  background-color: #000000;
-  color: #ffffff;
+  background-color:  rgb(black, black, black);
+  color: rgb(white, white, white);
 }
 /* Small screens */
 @media (max-width: 640px) {
