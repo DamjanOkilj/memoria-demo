@@ -3,7 +3,7 @@ import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
 import { meta } from "../../content_option";
-import aboutPic from "../../images/profile.jpg";
+import aboutPic from "../../images/PC010226.jpg";
 
 export const About = () => {
   return (
